@@ -1,3 +1,10 @@
+
+@media (max-width: 742px) {
+  .kecil-hilang {
+      display: none; /* Menyembunyikan elemen saat lebar layar kurang dari 743px */
+  }
+}
+
 #nprogress {
   .bar {
     z-index: 2000 !important;

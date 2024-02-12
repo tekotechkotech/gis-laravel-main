@@ -13,6 +13,8 @@ class Maps extends Component
     public $latitude;
     public $longitude;
     public $geojson=null;
+    
+
     public function render()
     {
         $this->maps=Map::all();
@@ -30,9 +32,9 @@ class Maps extends Component
         return view('livewire.maps');
     }
 
-    public function selected($id) {
+    public function terpilih($id) {
         $this->map = Map::where('id_map','03e4972a-c554-11ee-9406-708bcd206598')->first();
-        // dd($this->map);
+        dd($this->map);
 
 
         // Set default latitude and longitude jika tidak ada data dari server

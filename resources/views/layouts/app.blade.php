@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ $title ?? 'Page Title' }}</title>
+        <title>{{ $title ?? 'Laravel-GIS' }}</title>
 
         
         <!-- Bootstrap -->
@@ -22,7 +22,7 @@
             @endauth
         </div>
         <div class=""
-        @if (Route::is('maps'))
+        @if (Route::is('maps') || Route::is('maps.detail'))
         id='map'
         @endif style="height:100vh">
 

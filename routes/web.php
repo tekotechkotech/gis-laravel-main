@@ -6,6 +6,7 @@ use App\Livewire\Dashboard;
 use App\Livewire\Konfirmasi;
 use App\Livewire\Login;
 use App\Livewire\Maps;
+use App\Livewire\MapsDetail;
 use App\Livewire\Sekolah;
 use App\Livewire\Siswa;
 use App\Livewire\SuperAdmin;
@@ -33,6 +34,8 @@ Route::get('/', function () {
 Route::middleware('auth')->group( function() { 
     Route::get('dashboard',Dashboard::class)->name('dashboard');
     Route::get('maps',Maps::class)->name('maps');
+    // Route::get('maps/{id}',[Maps::class,'mapsdetail'])->name('maps.detail');
+    Route::get('maps/{id}',MapsDetail::class)->name('maps.detail');
 
     Route::get('konfirmasi',Konfirmasi::class)->name('konfirmasi');
     Route::get('superadmin',SuperAdmin::class)->name('superadmin');

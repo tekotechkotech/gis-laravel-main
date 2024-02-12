@@ -14,9 +14,12 @@
                 <div class="col-sm-10 col-md-10 col-lg-10 ">
                     <div class="bg-secondary  p-2 mx-0 my-0 text-light" id="showMapModal"
                         style="border-radius: 10px;cursor: pointer;">
-                            Pilih di Maps
+                        <span>
+                            {{ $geojson }}
+                        </span>
                     </div>
                 </div>
+                
             </div>
         </div>
 
@@ -73,11 +76,14 @@
 
             $(document).ready(function() {
 
+                let longitude = "{{ $longitude }}" ;
+                let latitude = "{{ $latitude }}";
+
             $('#showMapModal').click(function() {
                 $('#mapModal').appendTo("body") .modal('show');
             });
 
-            let map = L.map('map').setView(['-7.1148220569485945' ,'120.82636260147375'], 5);
+            let map = L.map('map').setView([latitude ,longitude], 11);
 
                 // osm
                 let osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -110,13 +116,11 @@
                     // overlayMaps
                 ).addTo(map);
 
-            });
-        </script>
+                let geojson = "{{ $geojson }}";
 
-        @if ($map)
-            <script>
-                $(document).ready(function() {
-                    fetch("{{ asset('/geojson/' . $map->geojson . '.geojson') }}")
+
+                    fetch("{{ asset('/geojson/' ) }}"+ '/' + geojson + '.geojson')
+                    // fetch("{{ asset('/geojson/' ) }}"+ '/KotaYogyakarta.geojson')
                         .then(response => response.json())
                         .then(data => {
                             // Gunakan data GeoJSON yang dimuat untuk menambahkan GeoJSON ke peta
@@ -126,8 +130,7 @@
                             console.error('Error loading GeoJSON:', error);
                         });
 
-                });
-            </script>
-        @endif
+            });
+        </script>
     @endpush
 </div>

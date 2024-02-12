@@ -11,16 +11,16 @@
             
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav m-auto">
-            <a class="nav-link {{ Route::is('dashboard')?'active':'' }}" wire:navigate href="dashboard">Dashboard</a>
-            <a class="nav-link {{ Route::is('maps')?'active':'' }}" wire:navigate href="maps">Maps</a>
-            <a class="nav-link {{ Route::is('konfirmasi')?'active':'' }}" wire:navigate href="konfirmasi">Konfirmasi</a>
+            <a class="nav-link {{ Route::is('dashboard')?'active':'' }}" wire:navigate href="{{route('dashboard')}}">Dashboard</a>
+            <a class="nav-link {{ Route::is('maps')?'active':'' }}" wire:navigate href="{{route('maps')}}">Maps</a>
+            <a class="nav-link {{ Route::is('konfirmasi')?'active':'' }}" wire:navigate href="{{route('konfirmasi')}}">Konfirmasi</a>
 
             @if (Auth::user()->role=="super admin")
-              <a class="nav-link {{ Route::is('superadmin')?'active':'' }}" wire:navigate href="superadmin">Super Admin</a>
-              <a class="nav-link {{ Route::is('sekolah')?'active':'' }}" wire:navigate href="sekolah">Sekolah</a>
+              <a class="nav-link {{ Route::is('superadmin')?'active':'' }}" wire:navigate href="{{route('superadmin')}}">Super Admin</a>
+              <a class="nav-link {{ Route::is('sekolah')?'active':'' }}" wire:navigate href="{{route('sekolah')}}">Sekolah</a>
             @endif
             @if (Auth::user()->role=="super admin" || Auth::user()->role=="admin")
-              <a class="nav-link {{ Route::is('siswa')?'active':'' }}" wire:navigate href="siswa">Siswa</a>
+              <a class="nav-link {{ Route::is('siswa')?'active':'' }}" wire:navigate href="{{route('siswa')}}">Siswa</a>
             @endif
             
           </div>

@@ -1,6 +1,6 @@
 <div class=" my-5">
     <div class="row">
-        <div class="col-sm-12 col-md-7 col-lg-8">
+        <div class="col-sm-12 col-md-7 col-lg-8 kecil-hilang">
             <div class="jumbotron bg-white" style="border-radius: 10px;padding-top:200px">
                 {{-- <img src="{{ asset('img/logo.png') }}" style="width: 200px;" class="text-center mb-5"> --}}
                 <h4 class="text-right">Selamat datang di layanan peta digital <br><b>PT LPP Agro Nusantara</b></h4>
